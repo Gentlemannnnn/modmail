@@ -96,7 +96,7 @@ client.on("messageCreate", async (message) => {
     // Enregistrer les stats dans le fichier stats.json
     fs.writeFile("stats.json", JSON.stringify(stats, null, 2), (err) => {
       if (err) {
-        console.error("Error while writing stats file: " + err);
+        console.error("Problème pendant l'écriture du fichier : " + err);
       }
     });
   });
