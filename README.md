@@ -9,9 +9,9 @@ The module serves to log ticket actions and access them via the "!stats" command
 
 - Install the necessary dependencies by running npm install (You need node.js) see Dragory's repository about it.
 
-- Add the module to your project's dependencies by running npm install **/path/to/module**
+- Add the module to your project's dependencies by putting the index.js file inside  **/path/to/module** (make sure to rename the file, stats.js )
 
-- After doing this setp, make sure to put this required line inside your config.ini located at : **./config.ini**
+- After doing this step, make sure to put this required line inside your config.ini located at : **./config.ini**
 
     `" plugins[] = \src\modules\stats.js "`
 
