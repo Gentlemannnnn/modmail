@@ -39,6 +39,12 @@ The module exports a function that takes an object containing the following para
     });
 
     ```
+    
+    ```js
+    
+    !stats <discordId> 
+    
+    ```
 
 
 ## Contribution
