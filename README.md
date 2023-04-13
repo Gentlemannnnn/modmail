@@ -11,6 +11,9 @@ The module serves to log ticket actions and access them via the "!stats" command
 
 - Add the module to your project's dependencies by running npm install **/path/to/module**
 
+-After doing this setp, make sure to put this required line inside your config.ini located at : **./config.ini**
+`" plugins[] = \src\modules\stats.js "`
+
 - During the installation you'll need to install discord.js dependencies used by the module by : 
 
 
