@@ -45,6 +45,25 @@ The module exports a function that takes an object containing the following para
     !stats <discordId> 
     
     ```
+    
+    # Actual list of all available commands
+    
+    ```js
+    - !stats all all
+    - !stats all weekly
+    - !stats all monthly
+    - !stats discordId all
+    - !stats discordId weekly
+    - !stats discordId monthly
+
+    - !resetstats discordId    all
+    - !resetstats discordId weekly
+    - !resetstats discordId monthly
+
+    - !resestats all all
+    - !resetstats all weekly
+    - !resetstats all monthly
+    ```
 
 
 ## Contribution
