@@ -69,9 +69,6 @@ module.exports = ({ config, commands }) => {
     const userId = message.author.id;
     const guild = await client.guilds.fetch(config.inboxServerId);
     await guild.members.fetch();
-    const now = new Date();
-    const lastWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-    const lastMonth = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
 
     // Mettre à jour les stats de l'utilisateur
     if (!stats.users[userId]) {
@@ -118,6 +115,13 @@ module.exports = ({ config, commands }) => {
     "resetstats",
     "<userId:string> <period:string>",
     async (msg, args, thread) => {
+
+      if (!msg.member.roles.includes(config.statsCommandRoleId)) {
+        thread.postSystemMessage(
+          "Vous n'avez pas la permission d'utiliser cette commande."
+        );
+        return;
+      }
       if (args.userId === "all") {
         Object.values(stats.users).forEach((userStats) => {
           if (args.period == "monthly") {
@@ -174,11 +178,18 @@ module.exports = ({ config, commands }) => {
     }
   );
 
-  // Commande pour afficher les stats d'un utilisateur
+  // Commande pour afficher les stats d'aun utilisateur
   commands.addInboxThreadCommand(
     "stats",
     "<userId:string> <period:string>",
     async (msg, args, thread) => {
+
+      if (!msg.member.roles.includes(config.statsCommandRoleId)) {
+        thread.postSystemMessage(
+          "Vous n'avez pas la permission d'utiliser cette commande."
+        );
+        return;
+      }
       if (args.userId === "all") {
         let response = `**Statistiques pour tous les membres Discord (${args.period}) : **\n`;
         // Cas où on choisie tout les utilisateurs
