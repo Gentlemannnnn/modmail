@@ -56,11 +56,11 @@ The module exports a function that takes an object containing the following para
     - !stats discordId weekly
     - !stats discordId monthly
 
-    - !resetstats discordId    all
+    - !resetstats discordId all
     - !resetstats discordId weekly
     - !resetstats discordId monthly
 
-    - !resestats all all
+    - !resetstats all all
     - !resetstats all weekly
     - !resetstats all monthly
     ```
